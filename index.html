@@ -15,7 +15,7 @@
       <h2 class="project-tagline">Darrell Lian, Peter Willis and Aaron Myran, CS109a 2016</h2>
       <a href="#introduction-and-objectives" class="btn">Introduction</a>
       <a href="#methods" class="btn">Methods</a>
-      <a href="#prediction" class="btn">Prediction</a>
+      <a href="#results" class="btn">Results</a>
       <a href="#conclusion" class="btn">Conclusion</a>
       <a href="https://github.com/darlian/cs109a_loan" class="btn">View on GitHub</a>
     </section>
@@ -47,12 +47,20 @@ Specifically, we are looking at predicting defaults among two populations:</p>
 <p>We worked to understand the loan grade assigned by Lending Club (A through to F). We found that the loan grade was highly correlated to the interest rate -- correlation coefficient of 0.9541. This suggests that the Lending Club uses loan grade to determine interest rate to a great extent.
 </p>
 
-<p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/loan%20grade%20distribution.png" alt="Image of CV"></p>
-      
+<p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/loan%20grade%20distribution.png" alt="Loan grade box and whisker"></p>
+<p> We visualized data on the demographic nature of loan defaults. Key findings included:</p>
+<ul>
+  <li> Individuals who defaulted on their loans had few previous delinquent accounts </li>
+  <li> Individuals with all levels of work experience defaulted on their loans </li>
+  <li> There were very few cases of individuals with self reported incomes greater than $50,000 defaulting on their loans </li>
+<p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/Hist_work_exp.png" alt="Work experience histogram"></p>
+<p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/scatter_openAccounts_AnnualIncome.png" alt="Scatter plot of income"></p>
+
+
 <h2>
 <a id="data-pre-processing" class="anchor" href="#data-pre-processing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data pre-processing</h2>
 
-<p>We then proceeded to clean the data in the following ways:</p>
+<p>In preparation to create predictive models for our two populations of interest we then proceeded to clean the data:</p>
 
 <ol>
 <li>Removed loans whose "loan status" was "Current". This left us with approximately <strong>250,000 loans</strong> in the dataset.</li>
@@ -61,10 +69,13 @@ Specifically, we are looking at predicting defaults among two populations:</p>
 <li>Imputed all remaining missing values with the median value of their respective predictor variable column. This approach was relatively unproblematic, as we had a high number of remaining observations in our dataset (250,000). </li>
 </ol>
 
+<p> We also removed the loan grade and interest rate from the data, since these are created by Lending Club.</p>
+<p> For the model on new Lending Club customers, we removed all payment data - e.g. monthly installments paid - since Lending Club would not have that data on new customers.</p>
+ 
 <h2>
 <a id="model-fitting" class="anchor" href="#model-fitting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Model fitting</h2>
 
-<p>We then split the data into training and testing datasets (60-40), and fit the following 5 models on the training dataset:</p>
+<p>We then split the data into training and testing datasets (60% training - 40% testing), and fit the following 5 models on the training dataset:</p>
 
 <ul>
 <li>Logistic regression</li>
@@ -77,16 +88,17 @@ Specifically, we are looking at predicting defaults among two populations:</p>
 <h2>
 <a id="cross-validation" class="anchor" href="#cross-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cross-validation</h2>
 
-<p>Thereafter, we performed 5-fold cross-validation on the 3 models which most accurately predicted loan defaults in the testing dataset:</p>
+<p>Thereafter, we performed 5-fold cross-validation on the training data for the 3 models which most accurately predicted loan defaults in the initial run:</p>
 
 <ul>
 <li>Logistic regression (<strong>C regularization parameter</strong>)</li>
 <li>Decision Trees (<strong>depth of tree</strong>, <strong>minimum number of samples per leaf</strong>)</li>
 <li>Random Forests (<strong>number of trees</strong>)</li>
 </ul>
-
+<p> When performing the 5-fold cross-validation we split the training data into folds, holding out the test set. We then scored the models on the test set, to try to prevent overfitting as much as possible.</p>
+ 
 <h1>
-<a id="prediction" class="anchor" href="#prediction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prediction.</h1>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results.</h1>
 
 <h2>
 <a id="model-predictive-accuracy" class="anchor" href="#model-predictive-accuracy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Model predictive accuracy</h2>
