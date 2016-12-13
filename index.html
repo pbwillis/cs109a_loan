@@ -83,7 +83,7 @@
        <li>Random Forests</li>
     </ul>
     <h2>
-    <a id="cross-validation" class="anchor" href="#cross-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cross-validation</h2>
+    <a id="cross-validation" class="anchor" href="#cross-validation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cross validation</h2>
 
     <p>Thereafter, we performed 5-fold cross-validation on the training data for the 3 models which most accurately predicted loan defaults in the initial run:</p>
 
@@ -98,38 +98,27 @@
     <a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Results.</h1>
 
     <h2>
-    <a id="model-selection" class="anchor" href="#model-selection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Model selection</h2>
+    <a id="current-lending-club-customers" class="anchor" href="#current-lending-club-customers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Current Lending Club customers</h2>
 
-    <p>Our optimal model after cross validation, judged by predictive accuracy on class 1, was <strong>regularized logistic regression</strong>.</p>
-
+    <h3> Model selection </h3>
+    <p>For our first population of interest - <strong> current Lending Club customers </strong> our optimal model after cross validation was <strong>regularized logistic regression</strong>. We conducted model selection based on the model's ability to predict class 1 (default), rather than overall accuracy.</p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/predictive%20accuracy%20-%20table.png" alt="Image of Predictive Accuracy"></p>
-
     <p>We tuned the value of the regularization parameter of the logistic regression model, to maximize predictive accuracy on class 1. A <strong>value of 10^-3</strong> generated the best score.</p>
-
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/CV_logreg.png" alt="Image of CV"></p>
 
+    <h3> Feature importance</h3>
+      <p> Info here </p>
+    
     <h2>
-    <a id="feature-importance" class="anchor" href="#feature-importance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feature importance</h2>
-
-    <p>Insert decision tree.</p>
-
-    <p>Last Payment Amount
-    1.1 : Outstanding Loan Principal (Investors)
-      Split 1.1.1: Total Principal Received 
-      Split 1.1.2: Total Payment Received (Investors)
-      1.2: Total Late Fees Received
-      Split 1.2.1: Installments
-      Split 1.2.2: Total Principal Received </p>
-
-    <p>Variables related to a borrower’s past payment behaviour were the most predictive of a current borrower’s eventual default, which makes intuitive sense. However, for new borrowers, other variables like FICO score would be salient.</p>
-
-    <h2>
-    <a id="model-removing-features-related-to-payments-on-ongoing-loans" class="anchor" href="#model-removing-features-related-to-payments-on-ongoing-loans" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Model removing features related to payments on ongoing loans</h2>
-
-    <p>Insert info.</p>
-
+    <a id="new-lending-club-customers" class="anchor" href="#new-lending-club-customers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>New Lending Club customers</h2>
+    <h3> Model selection </h3>
+      
+    <h3> Feature importance </h3>
+     
     <h1>
     <a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusion and Further Work</h1>
+    
+    <p>Variables related to a borrower’s past payment behaviour were the most predictive of a current borrower’s eventual default, which makes intuitive sense. However, for new borrowers, other variables like FICO score would be salient.</p>
 
       
       
