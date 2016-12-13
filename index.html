@@ -102,6 +102,7 @@
 
     <h3> Model selection </h3>
     <p>For our first population of interest - <strong> current Lending Club customers </strong> our optimal model after cross validation was <strong>regularized logistic regression</strong>. We conducted model selection based on the model's ability to predict class 1 (default), rather than overall accuracy.</p>
+    
     <table>
       <tr>
       <th> Model </th>
@@ -110,14 +111,38 @@
       <th> Score on class 1 </th>
       </tr>
       <tr>
-      <td> Logistic Reg </td>
-      <td> 0.9917 </td>
-      <td> 0.9971 </td>
-      <td> 0.9647 </td>
+      <td> Logistic Regression </td>
+      <td> 0.9919 </td>
+      <td> 0.9973 </td>
+      <td> 0.9645 </td>
       </tr>
-      </table>
-      <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/predictive%20accuracy%20-%20table.png" alt="Image of Predictive Accuracy"></p>
-    <p>We tuned the value of the regularization parameter of the logistic regression model, to maximize predictive accuracy on class 1. A <strong>value of 10^-3</strong> generated the best score.</p>
+      <tr>
+      <td> Linear Discriminant Analysis </td>
+      <td> 0.9461 </td>
+      <td> 0.9988 </td>
+      <td> 0.6808 </td>
+      </tr>
+      <tr>
+      <td> Quadratic Discriminant Analysis </td>
+      <td> 0.9097 </td>
+      <td> 0.9986 </td>
+      <td> 0.4618 </td>
+      </tr>
+      <tr>
+      <td> Random Forest </td>
+      <td> 0.9839 </td>
+      <td> 0.9993 </td>
+      <td> 0.9049 </td>
+      </tr> 
+      <tr>
+      <td> Decision Tree </td>
+      <td> 0.9931 </td>
+      <td> 0.9995 </td>
+      <td> 0.9613 </td>
+      </tr>      
+    </table>
+   
+      <p>We tuned the value of the regularization parameter of the logistic regression model, to maximize predictive accuracy on class 1. A <strong>value of 10^-3</strong> generated the best score.</p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/CV_logreg.png" alt="Image of CV"></p>
 
     <h3> Feature importance</h3>
