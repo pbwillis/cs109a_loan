@@ -15,6 +15,12 @@ a {
   a:hover {
     text-decoration: underline; }
 
+
+img {
+    display: block;
+    margin: auto;
+    width: 40%; }
+
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -243,9 +249,3 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
-
-img {
-    display: block;
-    margin: auto;
-    width: 40%;
-}
