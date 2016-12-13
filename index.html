@@ -42,10 +42,13 @@ Specifically, we are looking at predicting defaults among two populations:</p>
 <h2>
 <a id="data-exploration" class="anchor" href="#data-exploration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data exploration</h2>
 
-<p>We used data from <a href="https://www.kaggle.com/wendykan/lending-club-loan-data">Lending Club</a>, on loans issued by the platform from 2007-2015. There were <strong>887379 loans</strong> in the dataset, and <strong>74 predictor variables</strong>. </p>
+<p>We used open data from <a href="https://www.kaggle.com/wendykan/lending-club-loan-data">Lending Club</a>, on loans issued by the platform from 2007-2015. There were <strong>887,379 loans</strong> in the dataset, and <strong>74 predictor variables</strong>. </p>
 
-<p>Insert visualizations of trends in the data - milestones 1-3?</p>
+<p>We worked to understand the loan grade assigned by Lending Club (A through to F). We found that the loan grade was highly correlated to the interest rate -- correlation coefficient of 0.9541. This suggests that the Lending Club uses loan grade to determine interest rate to a great extent.
+</p>
 
+<p><img src="https://raw.githubusercontent.com/pbwillis/cs109a_loan/gh-pages/loan%20grade%20distribution.png" alt="Image of CV"></p>
+      
 <h2>
 <a id="data-pre-processing" class="anchor" href="#data-pre-processing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data pre-processing</h2>
 
