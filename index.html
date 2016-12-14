@@ -148,8 +148,10 @@
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/log_reg%20full.png" alt="Image of CV_current"></p>
 
     <h3> Feature importance</h3>
-      <p> Info here </p>
-    
+    <p> To better understand feature importance we referred to the decision tree model. The optimal cross validated decision tree model for current Lending Club customers had a maximum depth of 10. It's prediction accuracy on class 1 was 0.9613, slightly less than logistic regression (0.9645). </p>
+    <p> The top three levels of the optimal decision tree model are included below. The most important features are those relating to past payment behavior - last payment amount, remaining principal, late fees, principal received, payment to investors and size of monthly installment.</p>
+    <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/full_tree.jpeg" alt="Decision Tree_Full"></p>
+    <p> The result that past payment behavior is predictive of future payment behavior is quite intuitive. What is useful about our model is that it provides lending club with information on "early warnings of default". Lending Club could target default prevention interventions to at-risk customers identified by our model.</p>
     <h2>
     <a id="new-lending-club-customers" class="anchor" href="#new-lending-club-customers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. New Lending Club customers</h2>
     <h3> Model selection </h3>
@@ -199,8 +201,11 @@
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/log_reg%20restricted.png" alt="Image of CV_new"></p>
 
     <h3> Feature importance </h3>
-     
-    <h1>
+    <p> For new Lending Club customers we also extracted feature importance from the decision tree model. The optimal cross validated decision tree model had a maximum depth of 2, with a prediction accuracy on class 1 of 0.6443. Again this was slightly less than logistic regression (0.6641). </p>
+    <p> The optimal decision tree model is included below. The two important features are the length of the loan and annual income of the borrower.</p>
+    <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/restricted_tree.jpeg" alt="Decision Tree_Restricted"></p> 
+    <p> Lending Club loans can either be 36 months or 60 months. The model shows us that new customers who take a 60 month loan, need more income to not be at risk of default ($60,382 vs. $49,470). Some part of this is likely explained by a positive correlation between high loan amounts and 60 month loans (correlation coefficient = 0.4071).</p>
+      <h1>
     <a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusion and Further Work</h1>
     
     <p>Variables related to a borrower’s past payment behaviour were the most predictive of a current borrower’s eventual default, which makes intuitive sense. However, for new borrowers, other variables like FICO score would be salient.</p>
