@@ -43,14 +43,14 @@
 
       <p>We used open data from <a href="https://www.kaggle.com/wendykan/lending-club-loan-data">Lending Club</a>, on loans issued by the platform from 2007-2015. There were <strong>887,379 loans</strong> in the dataset, and <strong>74 predictor variables</strong>. </p>
 
-      <p>We worked to understand the loan grade assigned by Lending Club (A through to F). We found that the loan grade was highly correlated to the interest rate -- correlation coefficient of 0.9541. This suggests that the Lending Club uses loan grade to determine interest rate to a great extent.</p>
+      <p>We worked to understand the loan grade assigned by Lending Club (A through to F). We found that the loan grade was highly correlated to the interest rate -- <strong> correlation coefficient of 0.9541 </strong>. This suggests that the Lending Club uses loan grade to determine interest rate to a great extent.</p>
 
       <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/loan%20grade%20distribution.png" alt="Loan grade box and whisker"></p>
       <p> We visualized data on the demographic nature of loan defaults. Key findings included:</p>
       <ul>
         <li> Individuals who defaulted on their loans had few previous delinquent accounts </li>
         <li> Individuals with all levels of work experience defaulted on their loans </li>
-        <li> There were very few cases of individuals with self reported incomes greater than $50,000 defaulting on their loans </li>
+        <li> There were very few cases of individuals with self reported <strong> incomes greater than $50,000 </strong> defaulting on their loans </li>
       </ul>
       <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/Scatter_LoanStatusByPubRecords_DelinqResults.png" alt="Scatter plot of deliquent accounts"></p>
       <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/Hist_work_exp.png" alt="Work experience histogram"></p>
@@ -148,10 +148,13 @@
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/log_reg%20full.png" alt="Image of CV_current"></p>
 
     <h3> Feature importance</h3>
-    <p> To better understand feature importance we referred to the decision tree model. The optimal cross validated decision tree model for current Lending Club customers had a maximum depth of 10. It's prediction accuracy on class 1 was 0.9613, slightly less than logistic regression (0.9645). </p>
-    <p> The top three levels of the optimal decision tree model are included below. The most important features are those relating to past payment behavior - last payment amount, remaining principal, late fees, principal received, payment to investors and size of monthly installment.</p>
+    <p> To better understand feature importance we referred to the <strong> decision tree model </strong>. </p>
+    <p> The optimal cross validated decision tree model for current Lending Club customers had a maximum depth of 10. It's prediction accuracy on class 1 was <strong> 0.9613 </strong>, slightly less than logistic regression (0.9645). </p>
+    
+    <p> The <strong> top three levels </strong> of the optimal decision tree model are included below. </p>
+    <p> The most important features are those relating to past payment behavior - <strong> last payment amount, remaining principal, late fees, principal received, payment to investors and size of monthly installment. </strong> </p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/full_tree.jpeg" alt="Decision Tree_Full"></p>
-    <p> The result that past payment behavior is predictive of future payment behavior is quite intuitive. What is useful about our model is that it provides lending club with information on "early warnings of default". Lending Club could target default prevention interventions to at-risk customers identified by our model.</p>
+    <p> The result that past payment behavior is predictive of future payment behavior is quite intuitive. What is useful about our model is that it provides lending club with information on <strong> "early warnings of default" </strong>. Lending Club could target default prevention interventions to at-risk customers identified by our model.</p>
     <h2>
     <a id="new-lending-club-customers" class="anchor" href="#new-lending-club-customers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. New Lending Club customers</h2>
     <h3> Model selection </h3>
@@ -201,16 +204,17 @@
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/log_reg%20restricted.png" alt="Image of CV_new"></p>
 
     <h3> Feature importance </h3>
-    <p> For new Lending Club customers we also extracted feature importance from the decision tree model. The optimal cross validated decision tree model had a maximum depth of 2, with a prediction accuracy on class 1 of 0.6443. Again this was slightly less than logistic regression (0.6641). </p>
-    <p> The optimal decision tree model is included below. The two important features are the length of the loan and annual income of the borrower.</p>
+    <p> For new Lending Club customers we also extracted feature importance from the decision tree model. </p>
+    <p> The optimal cross validated decision tree model had a maximum depth of 2, with a prediction accuracy on class 1 of <strong> 0.6443 </strong>. Again this was slightly less than logistic regression (0.6641). </p>
+    <p> The optimal decision tree model is included below. The two important features are the <strong> length of the loan </strong> and <strong> annual income of the borrower</strong>.</p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/restricted_tree.jpeg" alt="Decision Tree_Restricted"></p> 
-    <p> Lending Club loans can either be 36 months or 60 months. The model shows us that new customers who take a 60 month loan, need more income to not be at risk of default ($60,382 vs. $49,470). Some part of this is likely explained by a positive correlation between high loan amounts and 60 month loans (correlation coefficient = 0.4071).</p>
+    <p> Lending Club loans can either be 36 months or 60 months. The model shows us that new customers who take a 60 month loan need more income to not be at risk of default ($60,382 vs. $49,470). Some part of this is likely explained by a positive correlation between high loan amounts and 60 month loans (correlation coefficient = 0.4071).</p>
       <h1>
     <a id="conclusion" class="anchor" href="#conclusion" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Conclusion and Further Work</h1>
     
-    <p>Variables related to a borrower’s past payment behaviour were the most predictive of a current borrower’s eventual default, while loan term and annual income were most important for new borrowers.</p>
+    <p>Variables related to <strong> past payment behaviour </strong> were the most predictive of a current borrower’s eventual default, while <strong> loan term and annual income </strong> were most important for predicting defaults among new borrowers.</p>
     <p>Overall our model for current customers was much more predictive than our model for new customers.</p>
-    <p> To improve our model for new customers in the future we could do further work with the text in the data, especially the job title and user-generated loan description. However both fields have drawbacks: the loan descriptions are missing for many loans and much of the relevant information on job titles may already be captured in the annual income variable.</p>      
+    <p> To improve our model for new customers in the future we could do further work with the text in the data, especially the job title and user-generated loan description. However both fields have drawbacks -- the loan descriptions are missing for many loans and much of the relevant information on job titles may already be captured in the annual income variable.</p>      
       
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/darlian/cs109a_loan">Predicting Loan Defaults with Machine Learning</a> is maintained by <a href="https://github.com/darlian">darlian</a>.</span>
