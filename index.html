@@ -26,7 +26,7 @@
 
       <p>Peer-2-peer financial institutions like <strong>Lending Club</strong> are exposed to risk from loan default. When a customer defaults on a loan, Lending Club and its investors risk losing their money.</p>    
       <p>To mitigate the risk from default, Lending Club has developed a grading system to classify potential customers. They have also published data on the loans, allowing researchers to study determinants of loan default.</p>
-      <p><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0139427"> Researchers have found </a> that Lending Club's grade and associated interest rate is highly predictive of loan default. They have also found measures of borrower indebtness to be highly predictive of loan default.</p>
+      <p><a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0139427"> Researchers have found </a> that Lending Club's grade and associated interest rate is highly predictive of loan default. They have also found measures of borrower indebtness to be highly predictive.</p>
 
       <p>Our project builds on this research, applying machine learning techniques to create a predictive model for loan defaults. Specifically, we are looking at predicting defaults among two populations:</p>
 
@@ -68,8 +68,8 @@
         <li>Imputed all remaining missing values with the median value of their respective predictor variable column. This approach was relatively unproblematic, as we had a high number of remaining observations in our dataset (250,000). </li>
      </ol>
 
-     <p> We also removed the loan grade and interest rate from the data, since these are created by Lending Club.</p>
-     <p> For the model on new Lending Club customers, we removed all payment data - e.g. monthly installments paid - since Lending Club would not have that data on new customers.</p>
+     <p> We also removed the loan grade and interest rate from the data, since these are created by Lending Club and we are trying to replicate / improve on their model.</p>
+     <p> For the model predicting default for new Lending Club customers, we removed all payment data - e.g. monthly installments paid - since Lending Club would not have that data on new customers.</p>
  
      <h2>
      <a id="model-fitting" class="anchor" href="#model-fitting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Model fitting</h2>
