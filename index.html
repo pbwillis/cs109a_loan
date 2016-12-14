@@ -68,8 +68,8 @@
         <li>Imputed all remaining missing values with the median value of their respective predictor variable column. This approach was relatively unproblematic, as we had a high number of remaining observations in our dataset (250,000). </li>
      </ol>
 
-     <p> We also removed the loan grade and interest rate from the data, since these are created by Lending Club and we are trying to replicate / improve on their model.</p>
-     <p> For the model predicting default for new Lending Club customers, we removed all payment data - e.g. monthly installments paid - since Lending Club would not have that data on new customers.</p>
+      <p> We also <strong> removed the loan grade and interest rate from the data </strong>, since these are created by Lending Club and we are trying to replicate / improve on their model. This reduced our model accuracy but was more faithful to the task.</p>
+     <p> For the model predicting default for new Lending Club customers, we <strong> removed all payment data - e.g. monthly installments paid - </strong> since Lending Club would not have that data on new customers.</p>
  
      <h2>
      <a id="model-fitting" class="anchor" href="#model-fitting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Model fitting</h2>
