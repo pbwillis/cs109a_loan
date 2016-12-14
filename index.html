@@ -59,7 +59,7 @@
       <h2>
       <a id="data-pre-processing" class="anchor" href="#data-pre-processing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Data pre-processing</h2>
 
-      <p>In preparation to create predictive models for our two populations of interest we then proceeded to clean the data:</p>
+      <p>In preparation to create predictive models for our two populations of interest we proceeded to clean the data:</p>
 
       <ol>
         <li>Removed loans whose "loan status" was "Current". This left us with approximately <strong>250,000 loans</strong> in the dataset.</li>
@@ -68,7 +68,7 @@
         <li>Imputed all remaining missing values with the median value of their respective predictor variable column. This approach was relatively unproblematic, as we had a high number of remaining observations in our dataset (250,000). </li>
      </ol>
 
-      <p> We also <strong> removed the loan grade and interest rate from the data </strong>, since these are created by Lending Club and we are trying to replicate / improve on their model. This reduced our model accuracy but was more faithful to the task.</p>
+      <p> We also <strong> removed the loan grade and interest rate from the data</strong>, since these are created by Lending Club and we are trying to replicate / improve on their model. This reduced our model accuracy but was more faithful to the task.</p>
      <p> For the model predicting default for new Lending Club customers, we <strong> removed all payment data - e.g. monthly installments paid - </strong> since Lending Club would not have that data on new customers.</p>
  
      <h2>
@@ -149,12 +149,13 @@
 
     <h3> Feature importance</h3>
     <p> To better understand feature importance we referred to the <strong> decision tree model </strong>. </p>
-    <p> The optimal cross validated decision tree model for current Lending Club customers had a maximum depth of 10. It's prediction accuracy on class 1 was <strong> 0.9613 </strong>, slightly less than logistic regression (0.9645). </p>
+    <p> The optimal cross-validated decision tree model for current Lending Club customers had a maximum depth of 10. Its prediction accuracy on class 1 was <strong> 0.9613 </strong>, slightly less than logistic regression (0.9645). </p>
     
     <p> The <strong> top three levels </strong> of the optimal decision tree model are included below. </p>
     <p> The most important features are those relating to past payment behavior - <strong> last payment amount, remaining principal, late fees, principal received, payment to investors and size of monthly installment. </strong> </p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/full_tree.jpeg" alt="Decision Tree_Full"></p>
-    <p> The result that past payment behavior is predictive of future payment behavior is quite intuitive. What is useful about our model is that it provides lending club with information on <strong> "early warnings of default" </strong>. Lending Club could target default prevention interventions to at-risk customers identified by our model.</p>
+    <p> The result that past payment behavior is predictive of future payment behavior is quite intuitive. </p>
+    <p> What is useful about our model is that it provides Lending Club with information on <strong> "early warnings of default"</strong>. Lending Club could target default prevention interventions to at-risk customers identified by our model.</p>
     <h2>
     <a id="new-lending-club-customers" class="anchor" href="#new-lending-club-customers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. New Lending Club customers</h2>
     <h3> Model selection </h3>
@@ -203,10 +204,10 @@
 
     <p>Maximum predictive accuracy on class 1 was at a <strong>value of 10^-4</strong> for the regularization parameter of the logistic regression model.</p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/log_reg%20restricted.png" alt="Image of CV_new"></p>
-      <p> Note that <strong> we did not include interest rate as a variable </strong>, since it is decided on by the Lending Club. If we had included interest rate, <strong> prediction accuracy would increase to ~0.71.</strong></p>
+     <p> Note that <strong> we did not include interest rate as a variable</strong>, since it is determined by the Lending Club. If we had included interest rate, <strong> prediction accuracy would increase to ~0.71.</strong></p>
     
     <h3> Feature importance </h3>
-    <p> For new Lending Club customers we also extracted feature importance from the decision tree model. </p>
+    <p> For new Lending Club customers we also extracted feature importance from the <strong>decision tree model</strong>. </p>
     <p> The optimal cross validated decision tree model had a maximum depth of 2, with a prediction accuracy on class 1 of <strong> 0.6443 </strong>. Again this was slightly less than logistic regression (0.6641). </p>
     <p> The optimal decision tree model is included below. The two important features are the <strong> length of the loan </strong> and <strong> annual income of the borrower</strong>.</p>
     <p><img src="https://raw.githubusercontent.com/darlian/cs109a_loan/gh-pages/restricted_tree.jpeg" alt="Decision Tree_Restricted"></p> 
